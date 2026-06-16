@@ -101,6 +101,9 @@
       font-size:28px;
       font-weight:bold;
       transition:0.3s;
+      border:none;
+      cursor:pointer;
+      font-family: Arial, sans-serif;
     }
 
     .btn:hover{
@@ -143,9 +146,9 @@
       <p>✅ Active Trading Community</p>
     </div>
 
-    <a class="btn" href="https://t.me/+NlWnMMEbSu9lM2I1" target="_blank">
+    <button class="btn" onclick="joinTelegram()">
       🚀 Join Telegram Channel
-    </a>
+    </button>
 
     <div class="bottom">
       ⏳ Limited Seats Available
@@ -156,6 +159,27 @@
     </div>
 
   </div>
+
+  <script>
+    function joinTelegram() {
+      const inviteCode = 'NlWnMMEbSu9lM2I1';
+      
+      // Telegram links की कोशिश करें
+      const links = [
+        'tg://join?invite=' + inviteCode, // Telegram app
+        'https://t.me/+' + inviteCode,    // Web version
+        'https://telegram.me/+' + inviteCode // Backup
+      ];
+      
+      // पहला लिंक खोलें
+      window.location.href = links[0];
+      
+      // अगर app नहीं है तो web version खोलें
+      setTimeout(() => {
+        window.open(links[1], '_blank');
+      }, 2000);
+    }
+  </script>
 
 </body>
 </html>
